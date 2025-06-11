@@ -20,10 +20,10 @@ public class ChatGPTService {
         this.restClient = restClient;
     }
 
-    @Value("${openapi.api.key}")
+    @Value("${openai.api.key}")
     private String key;
 
-    @Value("${openapi.api.model}")
+    @Value("${openai.api.model}")
     private String model;
 
     //method
@@ -41,6 +41,6 @@ public class ChatGPTService {
                         .retrieve()
                         .body(ChatGPTResponse.class);
         //
-        return chatGPTResponse.choices().get(0).
+        return chatGPTResponse.choices().get(0).message().content();
     }
 }
