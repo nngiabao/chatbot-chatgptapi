@@ -3,13 +3,11 @@ package Service;
 import dto.ChatGPTRequest;
 import dto.ChatGPTResponse;
 import dto.PromptRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.beans.factory.annotation.Value;
 import java.util.*;
 
-import java.sql.PreparedStatement;
 
 @Service
 public class ChatGPTService {
