@@ -1,10 +1,11 @@
 package dto;
 
-public record ChatGPTResponse() {
-    public static record Choice(String message, String finishReason) {
+import java.util.*;
+
+public record ChatGPTResponse(List<String> choices) {
+    public static record Choice(Message message) {
         public static record Message(String role, String content) {
 
         }
     }
-
 }
