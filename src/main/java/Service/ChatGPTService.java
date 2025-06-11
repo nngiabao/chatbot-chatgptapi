@@ -30,7 +30,7 @@ public class ChatGPTService {
     public String getResponse(PromptRequest promptRequest){
         ChatGPTRequest chatGPTRequest = new ChatGPTRequest(
                 model,
-                List.of(new ChatGPTRequest().messages("user",promptRequest.prompt()))
+                List.of(new ChatGPTRequest.Message("user",promptRequest.prompt()))
         );
 
         //request
@@ -41,6 +41,6 @@ public class ChatGPTService {
                         .retrieve()
                         .body(ChatGPTResponse.class);
         //
-        return chatGPTResponse.choices().get(0)
+        return chatGPTResponse.choices().get(0).
     }
 }
